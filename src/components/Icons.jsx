@@ -126,3 +126,41 @@ export const Lock = (p) => (
     <path d="M8 11V8a4 4 0 0 1 8 0v3" />
   </svg>
 )
+
+export const Calendar = (p) => (
+  <svg {...base} {...p}>
+    <rect x="3" y="4.5" width="18" height="16" rx="2" />
+    <path d="M3 9h18" />
+    <path d="M8 3v3M16 3v3" />
+  </svg>
+)
+
+export const Compass = (p) => (
+  <svg {...base} {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M15.5 8.5l-2 5-5 2 2-5 5-2z" />
+  </svg>
+)
+
+export const Send = (p) => (
+  <svg {...base} {...p}>
+    <path d="M22 2L11 13" />
+    <path d="M22 2l-7 20-4-9-9-4 20-7z" />
+  </svg>
+)
+
+export const Handshake = (p) => (
+  <svg {...base} {...p}>
+    <path d="M11 17l-2 2a1.5 1.5 0 0 1-2.1-2.1L9 14.8" />
+    <path d="M13 7l2-2a1.5 1.5 0 0 1 2.1 2.1L15 9.2" />
+    <path d="M3 11l4-4 4 3 3-1 5 5" />
+    <path d="M7 15l3 3" />
+  </svg>
+)
+
+export const Trend = (p) => (
+  <svg {...base} {...p}>
+    <path d="M3 17l6-6 4 4 8-8" />
+    <path d="M15 7h6v6" />
+  </svg>
+)

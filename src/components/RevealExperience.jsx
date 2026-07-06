@@ -3,9 +3,9 @@ import useInView from '../hooks/useInView'
 import { EyeOff, Check, Lock } from './Icons'
 
 const STEPS = [
-  { label: 'Anonymous profile', sub: 'Judged on substance, never status' },
-  { label: 'Mutual interest detected', sub: 'Both sides opt in — no one is exposed first' },
-  { label: 'Identity revealed', sub: 'Trust earned before the name is shown' },
+  { label: 'Verified members only', sub: 'Everyone is confirmed through your school or community' },
+  { label: 'You choose what to share', sub: 'Post with your real name — or stay private until you’re ready' },
+  { label: 'Connect on mutual interest', sub: 'Names are shared when both sides opt in' },
 ]
 
 const reducedMotion = () =>
@@ -29,20 +29,21 @@ export default function RevealExperience() {
         {/* Copy */}
         <div>
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">
-            Trust by design
+            Trust &amp; control
           </span>
           <h2 className="mt-4 font-serif text-3xl font-semibold leading-[1.1] tracking-tight text-neutral-950 text-balance sm:text-[2.7rem]">
-            Anonymous until it matters.
+            You decide what to share, and when.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-neutral-600">
-            Reciring flips the order of every other network. You see the substance of an exchange
-            before you ever see the person — so asking for help stops feeling like a risk.
+            Mutu is a verified, community-based network — every member is confirmed through your
+            school or organization. You choose to show up as yourself or stay private, and names are
+            only exchanged when there&apos;s mutual interest. So reaching out never feels like a risk.
           </p>
 
           <div className="mt-8 space-y-1.5">
-            <p className="font-serif text-xl font-semibold text-neutral-950">Value before status.</p>
+            <p className="font-serif text-xl font-semibold text-neutral-950">Verified, not anonymous by default.</p>
             <p className="font-serif text-xl font-semibold text-brand-500">
-              Contribution before credentials.
+              Warm introductions, on your terms.
             </p>
           </div>
 
@@ -99,7 +100,7 @@ export default function RevealExperience() {
                 {step < 2 ? (
                   <>
                     <p className="text-[0.62rem] font-bold uppercase tracking-widest text-neutral-400">
-                      {step === 0 ? 'Anonymous · Rotman peer' : 'Mutual interest detected'}
+                      {step === 0 ? 'Private · Rotman peer' : 'Mutual interest detected'}
                     </p>
                     <div className="mt-2 flex items-center justify-center gap-1.5 text-neutral-300">
                       <Lock className="h-4 w-4" />
@@ -109,7 +110,7 @@ export default function RevealExperience() {
                 ) : (
                   <div className="animate-pop">
                     <p className="text-[0.62rem] font-bold uppercase tracking-widest text-brand-500">
-                      Identity revealed
+                      Connected
                     </p>
                     <p className="mt-1 text-lg font-semibold text-neutral-950">Maya Rodriguez</p>
                     <p className="text-sm text-neutral-500">ex-Stripe PM · building in AI infra</p>

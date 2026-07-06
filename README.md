@@ -1,12 +1,18 @@
-# Reciring — Official Website
+# Mutu — Official Website
 
-The marketing / investor landing page for **Reciring**, a reciprocity-gated professional
-network for high-density cohorts. _Where value exchange becomes real connection._
+The marketing / investor landing page for **Mutu**, an AI-powered trusted network platform for
+professional communities. _Turn hidden networks into meaningful opportunities._
+
+> **Mutu** comes from _mutual_ — mutual value exchange, trusted introductions, and people
+> helping each other through warm networks.
 
 Built with **React 19 + Vite + Tailwind CSS v4**. Designed to be shown to investors, advisors,
 Rotman classmates, and institutional buyers — and to deploy on Vercel with zero config.
 
-> This is the website project only. It is independent of the Reciring product app.
+> This is the website project only. It is independent of the Mutu product app. The AI features
+> shown here (connection recommendations, daily digest, conversation starters, event
+> recommendations, network insights) are **mock UI** on the marketing site — the live matching
+> backend lives in the separate product app.
 
 ## Develop
 
@@ -20,10 +26,9 @@ npm run lint     # eslint
 
 ## Waitlist (Supabase)
 
-The primary CTA — **"Join the First Adopter Community"** — opens a modal that collects
-name, email, school, program, optional LinkedIn, and a multi-select "what are you looking
-for most?" The site is in waitlist stage: there is no "try live demo" CTA; the secondary
-action ("See How It Works") smooth-scrolls to the interactive match demo.
+The primary CTA — **"Join Mutu"** — opens a modal that collects name, email, school, program,
+optional LinkedIn, and a multi-select "what are you looking for most?" The site is in waitlist
+stage: the secondary action ("Explore the network") smooth-scrolls to the interactive match demo.
 
 Submissions are written to a Supabase `waitlist` table. **Setup:**
 
@@ -36,22 +41,23 @@ Submissions are written to a Supabase `waitlist` table. **Setup:**
 
 The Supabase SDK is code-split (loaded only on first submit), so it doesn't weigh down the
 landing page. Until env vars are set, signups are still captured to `localStorage`
-(`reciring_waitlist`) and a console warning explains how to enable persistence — so nothing
+(`mutu_waitlist`) and a console warning explains how to enable persistence — so nothing
 breaks in local dev and no early signup is silently lost.
 
 ## Experience (information architecture)
 
 Designed as a product walkthrough, not a deck. Each section is a moment:
 
-1. **Hero** — emotional hook + an animated Need → AI Match → Mutual Interest → Reveal sequence
-2. **Invisible Network** — scroll-triggered graph: isolated peers connect into a reciprocal network
-3. **Match Demo** — interactive: type/tap a need, a reciprocal match surfaces live (no sign-up)
-4. **Reveal Experience** — looping Anonymous → Mutual Interest → Identity Revealed animation
-5. **Feature Stories** — Traditional networking vs Reciring, side-by-side flows
-6. **Social Proof** — "Built inside the community it serves," real cohort quotes + credibility
-7. **For Institutions** — compact B2B2C / market / GTM band
-8. **Team** — concise positioning, founders + advisors
-9. **Final CTA** — "Help us build a world where nobody grows alone."
+1. **Hero** — positioning hook + a live AI recommendation card that morphs through suggestions
+2. **Problem** — scroll-triggered graph: valuable people already in your community, but hidden
+3. **How it works** — profile → offer + need → AI recommendations → meet through posts & events
+4. **Solution demo** — interactive: type/tap a need, Mutu surfaces a relevant match live
+5. **AI Vision** — the future AI network intelligence layer: digest, intros, insights (mock UI)
+6. **Trust & control** — you choose real-name or anonymous; verified, community-based trust
+7. **Community** — "Built inside the community it serves," real cohort quotes + credibility
+8. **For Institutions** — compact B2B2C / market / GTM band
+9. **Team** — concise positioning, founders + advisors
+10. **Final CTA** — "Start discovering your hidden network."
 
 ## Structure
 
@@ -65,8 +71,8 @@ src/
   lib/supabase.js      # lazy Supabase client + submitWaitlist()
   context/WaitlistProvider.jsx  # openWaitlist() context + mounts the modal
   components/
-    Navbar, Hero, InvisibleNetwork, MatchDemo, RevealExperience,
-    FeatureStories, SocialProof, ForInstitutions, Team, FinalCTA, Footer
+    Navbar, Hero, InvisibleNetwork, HowItWorks, MatchDemo, AIVision,
+    RevealExperience, SocialProof, ForInstitutions, Team, FinalCTA, Footer
     WaitlistModal.jsx  # the signup form (name/email/school/program/linkedin/interests)
     Reveal.jsx         # scroll-in wrapper (respects reduced-motion)
     Icons.jsx, Logo.jsx

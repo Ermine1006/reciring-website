@@ -1,30 +1,38 @@
 import { useEffect, useRef, useState } from 'react'
-import { Sparkle, Swap, Check, EyeOff } from './Icons'
+import { Sparkle, Swap } from './Icons'
 
 const MATCHES = {
   'Product management': {
-    persona: 'Anonymous · Rotman MBA',
+    persona: 'Priya N.',
+    detail: 'Rotman MBA · ex-FAANG PM',
+    initials: 'PN',
     offer: 'Technical product development & 0→1 roadmapping',
     needs: 'VC fundraising advice',
     tags: ['Product', 'Ex-FAANG'],
     fit: 96,
   },
   'Startup fundraising': {
-    persona: 'Anonymous · Rotman MBA',
+    persona: 'Marcus L.',
+    detail: 'Rotman MBA · founder',
+    initials: 'ML',
     offer: 'VC fundraising guidance & investor intros',
     needs: 'A technical co-founder',
     tags: ['Venture', 'Operator'],
     fit: 94,
   },
   'Interview preparation': {
-    persona: 'Anonymous · 2nd-year MBA',
+    persona: 'Dana K.',
+    detail: '2nd-year MBA · ex-consulting',
+    initials: 'DK',
     offer: 'MBB case-prep coaching & mock loops',
     needs: 'Resume review for product roles',
     tags: ['Consulting', 'Recruiting'],
     fit: 92,
   },
   'Financial modeling': {
-    persona: 'Anonymous · ex-IB Associate',
+    persona: 'Sam O.',
+    detail: 'MBA · ex-IB Associate',
+    initials: 'SO',
     offer: 'LBO & three-statement modeling crash session',
     needs: 'Go-to-market strategy for a side project',
     tags: ['Finance', 'Modeling'],
@@ -80,14 +88,14 @@ export default function MatchDemo() {
 
       <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
         <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">
-          See it work
+          The solution
         </span>
         <h2 className="mt-4 font-serif text-3xl font-semibold leading-[1.1] tracking-tight text-neutral-950 text-balance sm:text-[2.7rem]">
           What do you need help with?
         </h2>
         <p className="mt-5 text-lg leading-relaxed text-neutral-600">
-          Type it — or tap one. We&apos;ll surface someone who needs exactly what you can give back.
-          No sign-up. No name. Just the match.
+          Type it — or tap one. Mutu surfaces someone whose goals line up with yours, and who needs
+          exactly what you can give back. No cold outreach. Just the match.
         </p>
       </div>
 
@@ -139,7 +147,7 @@ export default function MatchDemo() {
         <div className="mt-8 min-h-[15rem]">
           {status === 'idle' && (
             <div className="flex h-full min-h-[15rem] items-center justify-center rounded-2xl border border-dashed border-neutral-300 bg-neutral-50/60 px-6 text-center text-neutral-400">
-              Your reciprocal match will appear here.
+              Your recommended match will appear here.
             </div>
           )}
 
@@ -147,7 +155,7 @@ export default function MatchDemo() {
             <div className="flex min-h-[15rem] flex-col items-center justify-center rounded-2xl border border-neutral-200 bg-white px-6 text-center">
               <span className="h-8 w-8 animate-spin-slow rounded-full border-[3px] border-brand-200 border-t-brand-500" />
               <p className="mt-4 text-sm font-medium text-neutral-500">
-                Scanning the cohort for a reciprocal fit…
+                Mutu is scanning your community for a mutual fit…
               </p>
             </div>
           )}
@@ -159,21 +167,22 @@ export default function MatchDemo() {
             >
               <div className="flex items-center justify-between border-b border-brand-100 bg-brand-50/60 px-5 py-3">
                 <span className="inline-flex items-center gap-2 text-sm font-bold text-brand-700">
-                  <Check className="h-4 w-4" /> Potential match found
+                  <Sparkle className="h-4 w-4" /> Recommended for you
                 </span>
                 <span className="rounded-full bg-brand-500 px-2.5 py-1 text-xs font-bold text-white">
-                  {match.fit}% reciprocal
+                  {match.fit}% mutual fit
                 </span>
               </div>
 
               <div className="p-5">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-neutral-950 text-brand-400">
-                    <EyeOff className="h-5 w-5" />
+                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-sm font-bold text-white">
+                    {match.initials}
                   </span>
                   <div>
                     <p className="text-sm font-semibold text-neutral-900">{match.persona}</p>
-                    <div className="mt-1 flex flex-wrap gap-1.5">
+                    <p className="text-xs text-neutral-500">{match.detail}</p>
+                    <div className="mt-1.5 flex flex-wrap gap-1.5">
                       {match.tags.map((t) => (
                         <span key={t} className="rounded-md bg-neutral-100 px-2 py-0.5 text-[0.7rem] font-semibold text-neutral-500">
                           {t}

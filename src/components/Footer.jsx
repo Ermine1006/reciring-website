@@ -2,11 +2,11 @@ import Logo from './Logo'
 import { useWaitlist } from '../context/WaitlistProvider'
 
 const NAV = [
-  { href: '#network', label: 'The network' },
-  { href: '#demo', label: 'Try a match' },
-  { href: '#reveal', label: 'How trust works' },
-  { href: '#how', label: 'The shift' },
-  { href: '#community', label: 'Community' },
+  { href: '#network', label: 'The problem' },
+  { href: '#demo', label: 'How it works' },
+  { href: '#ai', label: 'AI vision' },
+  { href: '#community', label: 'Trust & community' },
+  { href: '#institutions', label: 'For institutions' },
   { href: '#team', label: 'Team' },
 ]
 
@@ -19,14 +19,14 @@ export default function Footer() {
           <div className="max-w-sm">
             <Logo />
             <p className="mt-4 text-[0.95rem] leading-relaxed text-neutral-600">
-              A reciprocity-gated professional network for high-density cohorts. Where value
-              exchange becomes real connection.
+              An AI-powered trusted network platform. Mutu turns the hidden networks inside your
+              community into meaningful people, events, and opportunities.
             </p>
             <button
               onClick={openWaitlist}
               className="mt-5 inline-flex items-center gap-2 rounded-full bg-neutral-950 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-600"
             >
-              Join the First Adopter Community →
+              Join Mutu →
             </button>
           </div>
 
@@ -44,8 +44,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-3 border-t border-neutral-100 pt-6 text-sm text-neutral-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Reciring. All rights reserved.</p>
-          <p>From isolation and competition — to reciprocity and trust.</p>
+          <p>© {new Date().getFullYear()} Mutu. All rights reserved.</p>
+          <p>Mutual value, meaningful connection — no one grows alone.</p>
         </div>
       </div>
     </footer>

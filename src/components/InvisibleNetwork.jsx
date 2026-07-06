@@ -46,16 +46,17 @@ export default function InvisibleNetwork() {
       <div ref={ref} className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[0.85fr_1.15fr]">
         <div>
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-400">
-            The invisible network
+            The problem
           </span>
           <h2 className="mt-4 font-serif text-4xl font-semibold leading-[1.08] tracking-tight text-balance sm:text-5xl">
-            Your network already exists.
+            The people you need already exist.
             <br />
-            <span className="text-gradient">Reciring makes it visible.</span>
+            <span className="text-gradient">They&apos;re just hidden.</span>
           </h2>
           <p className="mt-6 max-w-md text-lg leading-relaxed text-white/70">
-            In a dense cohort, the right person is usually already in the room — failing the class
-            you aced, raising the round you can open doors for. The connection just never forms.
+            Valuable people, events, and opportunities already live inside your community — but
+            they&apos;re fragmented across chats, threads, and inboxes, and almost impossible to find
+            at the moment you actually need them. So most connections never form.
           </p>
 
           <div className="mt-8 flex items-center gap-5">

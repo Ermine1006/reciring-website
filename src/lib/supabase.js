@@ -3,7 +3,7 @@ const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 
 export const isSupabaseConfigured = Boolean(url && anonKey)
 
-const LOCAL_KEY = 'reciring_waitlist'
+const LOCAL_KEY = 'mutu_waitlist'
 
 // Always keep a local backup so nothing is lost before Supabase is wired up.
 function backupLocally(payload) {
@@ -39,14 +39,14 @@ export async function submitWaitlist(entry) {
     program: entry.program?.trim() || null,
     linkedin: entry.linkedin?.trim() || null,
     looking_for: entry.lookingFor?.length ? entry.lookingFor : null,
-    source: 'reciring-website',
+    source: 'mutu-website',
   }
 
   backupLocally(payload)
 
   if (!isSupabaseConfigured) {
     console.warn(
-      '[Reciring] Supabase is not configured — the signup was saved to localStorage only. ' +
+      '[Mutu] Supabase is not configured — the signup was saved to localStorage only. ' +
         'Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY (see .env.example) to persist signups.',
     )
     return { ok: true, persisted: false }

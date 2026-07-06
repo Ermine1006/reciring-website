@@ -13,11 +13,12 @@ export default function FinalCTA() {
 
       <div className="relative mx-auto max-w-3xl px-5 text-center sm:px-8">
         <h2 className="font-serif text-4xl font-semibold leading-[1.06] tracking-tight text-balance sm:text-[3.4rem]">
-          Help us build a world where{' '}
-          <span className="text-gradient">nobody grows alone.</span>
+          Start discovering your{' '}
+          <span className="text-gradient">hidden network.</span>
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/70">
-          The future of professional networking isn&apos;t more connections. It&apos;s better ones.
+          The future of professional networking isn&apos;t more connections. It&apos;s the right ones,
+          at the right time — surfaced for you.
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -25,14 +26,14 @@ export default function FinalCTA() {
             onClick={openWaitlist}
             className="group inline-flex items-center justify-center gap-2 rounded-full bg-brand-500 px-7 py-4 text-base font-semibold text-white shadow-lg shadow-brand-500/30 transition-all hover:bg-brand-400"
           >
-            Join the First Adopter Community
+            Join Mutu
             <Arrow className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </button>
           <a
             href="#demo"
             className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 px-7 py-4 text-base font-semibold text-white transition-all hover:border-white/40 hover:bg-white/10"
           >
-            See How It Works
+            Explore the network
           </a>
         </div>
 

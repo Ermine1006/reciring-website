@@ -1,4 +1,4 @@
--- Reciring waitlist table.
+-- Mutu waitlist table.
 -- Run this in the Supabase SQL editor (Dashboard → SQL → New query).
 
 create table if not exists public.waitlist (

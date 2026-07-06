@@ -21,8 +21,8 @@ const QUOTES = [
 
 const CRED = [
   { k: 'Rotman MBA', v: 'The first cohort — founder-led from inside' },
-  { k: 'Live product', v: 'reciring.vercel.app, in market today' },
-  { k: 'First matches', v: 'Real reciprocal connections, pre-launch' },
+  { k: 'Verified members', v: 'Confirmed through school & community' },
+  { k: 'First matches', v: 'Real mutual connections, pre-launch' },
   { k: '2 faculty advisors', v: 'Trust, networks & behavioural science' },
 ]
 
@@ -43,7 +43,7 @@ export default function SocialProof() {
             Built inside the community it serves.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-white/70">
-            Reciring didn&apos;t start in a boardroom. It started with real students saying the same
+            Mutu didn&apos;t start in a boardroom. It started with real students saying the same
             quiet thing — we all came here to grow, but the structure makes it hard to ask for help.
           </p>
         </div>

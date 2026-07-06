@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Arrow, Sparkle, Check } from './Icons'
+import { Arrow, Sparkle, Check, Handshake } from './Icons'
 import { useWaitlist } from '../context/WaitlistProvider'
 
 export default function Hero() {
@@ -23,17 +23,18 @@ export default function Hero() {
               <span className="absolute inline-flex h-full w-full rounded-full bg-brand-400 animate-ring" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-500" />
             </span>
-            Now onboarding the first cohort · Rotman MBA
+            AI-powered network intelligence · now onboarding Rotman MBA
           </div>
 
-          <h1 className="mt-6 font-serif text-[2.7rem] font-semibold leading-[1.04] tracking-tight text-neutral-950 text-balance sm:text-[4.1rem]">
-            Meet the people you{' '}
-            <span className="text-gradient">should have already met.</span>
+          <h1 className="mt-6 font-serif text-[2.6rem] font-semibold leading-[1.05] tracking-tight text-neutral-950 text-balance sm:text-[3.9rem]">
+            Turn hidden networks into{' '}
+            <span className="text-gradient">meaningful opportunities.</span>
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-neutral-600 text-pretty">
-            Every professional cohort holds hidden opportunities, untapped expertise, and future
-            collaborators. Reciring helps you discover them — through reciprocity, not cold outreach.
+            Mutu is an AI-powered community platform where members discover relevant people, events,
+            and conversations — based on what they can offer, what they need, and who they already
+            trust.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -41,146 +42,118 @@ export default function Hero() {
               onClick={openWaitlist}
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-brand-500 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-brand-500/25 transition-all hover:bg-brand-600 hover:shadow-brand-500/40"
             >
-              Join the First Adopter Community
+              Join Mutu
               <Arrow className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </button>
             <a
               href="#demo"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-3.5 text-base font-semibold text-neutral-900 transition-all hover:border-neutral-400 hover:bg-neutral-50"
             >
-              See How It Works
+              Explore the network
             </a>
           </div>
 
           <p className="mt-7 max-w-md text-sm leading-relaxed text-neutral-500">
-            The most valuable person in your cohort may still be invisible. Reciring makes the match
-            — not the status — come first.
+            The most valuable person in your community may already be one warm introduction away.
+            Mutu surfaces the match — and helps you make it.
           </p>
         </div>
 
         <div className="relative">
-          <MatchFlow />
+          <RecommendationPreview />
         </div>
       </div>
     </section>
   )
 }
 
-/* ---- Animated product explainer: Need + Offer → AI Match → Mutual Interest → Reveal ---- */
+/* ---- AI-native hero visual: a "Recommended for you" card that reasons about the match ---- */
 const prefersReducedMotion = () =>
   typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-function MatchFlow() {
-  // Reduced-motion users see the completed state immediately, no looping.
-  const [stage, setStage] = useState(() => (prefersReducedMotion() ? 3 : 0))
+const REASONS = [
+  'You both want to break into venture capital',
+  'Sarah has startup hiring experience',
+  'You can offer China market insights',
+]
+
+function RecommendationPreview() {
+  // Reduced-motion users see the fully "reasoned" card immediately (past the last reason).
+  const [step, setStep] = useState(() => (prefersReducedMotion() ? REASONS.length + 1 : 0))
 
   useEffect(() => {
     if (prefersReducedMotion()) return
-    const t = setTimeout(() => setStage((s) => (s >= 4 ? 0 : s + 1)), stage === 4 ? 1600 : 1150)
+    const t = setTimeout(
+      () => setStep((s) => (s > REASONS.length ? 0 : s + 1)),
+      step === 0 ? 700 : step > REASONS.length ? 1800 : 900,
+    )
     return () => clearTimeout(t)
-  }, [stage])
-
-  const show = (n) => stage >= n
+  }, [step])
 
   return (
     <div className="relative mx-auto w-full max-w-md">
       <div className="absolute -inset-5 -z-10 rounded-[2.2rem] bg-gradient-to-br from-brand-200/40 via-transparent to-gold-300/30 blur-2xl" />
-      <div className="rounded-[1.9rem] border border-neutral-200 bg-white/90 p-5 shadow-2xl shadow-neutral-900/10 backdrop-blur animate-float sm:p-6">
-        {/* The two sides */}
-        <div className="grid grid-cols-2 gap-3">
-          <SideCard
-            kind="need"
-            label="You need"
-            text="A technical co-founder for an AI startup"
-          />
-          <SideCard
-            kind="offer"
-            label="You offer"
-            text="VC fundraising guidance & warm intros"
-          />
+      <div className="rounded-[1.9rem] border border-neutral-200 bg-white/95 p-5 shadow-2xl shadow-neutral-900/10 backdrop-blur animate-float sm:p-6">
+        {/* Card header */}
+        <div className="flex items-center gap-2 text-brand-600">
+          <Sparkle className="h-4 w-4" />
+          <span className="text-[0.7rem] font-bold uppercase tracking-widest">Recommended for you</span>
         </div>
 
-        {/* Step 1: AI Match */}
-        <FlowStep active={show(1)} done={show(2)} accent="brand" icon={<Sparkle className="h-4 w-4" />}>
-          <span className="font-semibold">AI finds a reciprocal match</span>
-          {show(1) && !show(2) && (
-            <span className="ml-2 inline-block h-3.5 w-3.5 animate-spin-slow rounded-full border-2 border-brand-300 border-t-brand-600 align-middle" />
-          )}
-        </FlowStep>
+        {/* Person */}
+        <div className="mt-4 flex items-center gap-3.5">
+          <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-base font-bold text-white">
+            SC
+          </span>
+          <div className="leading-tight">
+            <p className="text-[1.02rem] font-semibold text-neutral-950">Sarah Chen</p>
+            <p className="text-sm text-neutral-500">2nd-year MBA · ex-startup operator</p>
+          </div>
+          <span className="ml-auto rounded-full bg-brand-50 px-2.5 py-1 text-xs font-bold text-brand-600 ring-1 ring-brand-100">
+            94% fit
+          </span>
+        </div>
 
-        {/* Step 2: Mutual interest */}
-        <FlowStep active={show(2)} done={show(3)} accent="gold" icon={<Check className="h-4 w-4" />}>
-          <span className="font-semibold">Mutual interest</span>
-          <span className="text-neutral-500"> — both sides opt in</span>
-        </FlowStep>
+        {/* AI reasoning — builds line by line */}
+        <div className="mt-5 rounded-2xl bg-neutral-50 p-4">
+          <p className="text-[0.7rem] font-bold uppercase tracking-widest text-neutral-400">
+            Why Mutu suggests Sarah
+          </p>
+          <ul className="mt-2.5 space-y-2">
+            {REASONS.map((r, i) => (
+              <li
+                key={r}
+                className={`flex items-start gap-2 text-sm transition-all duration-500 ${
+                  step > i ? 'text-neutral-700 opacity-100' : 'translate-y-1 text-neutral-400 opacity-0'
+                }`}
+              >
+                <Check
+                  className={`mt-0.5 h-4 w-4 shrink-0 ${step > i ? 'text-brand-500' : 'text-neutral-300'}`}
+                />
+                {r}
+              </li>
+            ))}
+            {step <= REASONS.length && (
+              <li className="flex items-center gap-2 pt-0.5 text-sm text-neutral-400">
+                <span className="h-3.5 w-3.5 animate-spin-slow rounded-full border-2 border-brand-200 border-t-brand-500" />
+                Analyzing mutual value…
+              </li>
+            )}
+          </ul>
+        </div>
 
-        {/* Step 3: Reveal */}
-        <div
-          className={`mt-3 overflow-hidden rounded-2xl border transition-all duration-500 ${
-            show(3)
-              ? 'max-h-44 border-brand-200 bg-gradient-to-br from-brand-50 to-white opacity-100'
-              : 'max-h-0 border-transparent opacity-0'
+        {/* Action */}
+        <button
+          className={`mt-4 flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-500 ${
+            step > REASONS.length
+              ? 'bg-brand-500 text-white shadow-lg shadow-brand-500/25'
+              : 'bg-neutral-100 text-neutral-400'
           }`}
         >
-          <div className="flex items-center gap-3 p-4">
-            <div className="relative">
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-brand-700 text-base font-bold text-white">
-                MR
-              </span>
-              <span className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-white text-brand-500 shadow">
-                <Check className="h-3.5 w-3.5" />
-              </span>
-            </div>
-            <div className="leading-tight">
-              <p className="text-[0.62rem] font-bold uppercase tracking-widest text-brand-500">
-                Identity revealed
-              </p>
-              <p className="text-[0.98rem] font-semibold text-neutral-950">Maya R.</p>
-              <p className="text-xs text-neutral-500">ex-Stripe PM · building in AI infra</p>
-            </div>
-          </div>
-        </div>
+          <Handshake className="h-4 w-4" />
+          Request a warm intro
+        </button>
       </div>
-    </div>
-  )
-}
-
-function SideCard({ kind, label, text }) {
-  const isNeed = kind === 'need'
-  return (
-    <div
-      className={`rounded-2xl border p-4 ${
-        isNeed ? 'border-brand-200 bg-brand-50/60' : 'border-gold-300/60 bg-gold-300/10'
-      }`}
-    >
-      <p
-        className={`text-[0.6rem] font-bold uppercase tracking-widest ${
-          isNeed ? 'text-brand-500' : 'text-gold-600'
-        }`}
-      >
-        {label}
-      </p>
-      <p className="mt-1.5 text-sm font-medium leading-snug text-neutral-800">{text}</p>
-    </div>
-  )
-}
-
-function FlowStep({ active, done, accent, icon, children }) {
-  const ring = accent === 'gold' ? 'text-gold-600 bg-gold-300/15 ring-gold-300/40' : 'text-brand-600 bg-brand-50 ring-brand-100'
-  return (
-    <div
-      className={`mt-3 flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm ring-1 transition-all duration-500 ${
-        active ? `opacity-100 ${ring}` : 'opacity-30 bg-neutral-50 text-neutral-400 ring-neutral-100'
-      }`}
-    >
-      <span
-        className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-colors ${
-          active ? (accent === 'gold' ? 'bg-gold-400 text-white' : 'bg-brand-500 text-white') : 'bg-neutral-200 text-neutral-400'
-        }`}
-      >
-        {done ? <Check className="h-4 w-4" /> : icon}
-      </span>
-      <span className="text-neutral-700">{children}</span>
     </div>
   )
 }

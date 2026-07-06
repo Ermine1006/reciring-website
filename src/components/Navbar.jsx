@@ -3,10 +3,10 @@ import Logo from './Logo'
 import { useWaitlist } from '../context/WaitlistProvider'
 
 const LINKS = [
-  { href: '#network', label: 'The network' },
-  { href: '#demo', label: 'Try a match' },
-  { href: '#reveal', label: 'How trust works' },
-  { href: '#community', label: 'Community' },
+  { href: '#network', label: 'The problem' },
+  { href: '#demo', label: 'How it works' },
+  { href: '#ai', label: 'AI vision' },
+  { href: '#community', label: 'Trust' },
   { href: '#team', label: 'Team' },
 ]
 
@@ -31,7 +31,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 sm:px-8">
-        <a href="#top" className="shrink-0" aria-label="Reciring home">
+        <a href="#top" className="shrink-0" aria-label="Mutu home">
           <Logo />
         </a>
 
@@ -52,13 +52,13 @@ export default function Navbar() {
             href="#demo"
             className="rounded-full px-4 py-2 text-sm font-semibold text-neutral-700 transition-colors hover:text-neutral-950"
           >
-            See How It Works
+            Explore the network
           </a>
           <button
             onClick={openWaitlist}
             className="rounded-full bg-neutral-950 px-4.5 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-brand-600 hover:shadow-brand-500/20"
           >
-            Join the Community
+            Join Mutu
           </button>
         </div>
 
@@ -94,7 +94,7 @@ export default function Navbar() {
               }}
               className="mt-2 rounded-full bg-neutral-950 px-4 py-2.5 text-center text-sm font-semibold text-white"
             >
-              Join the First Adopter Community
+              Join Mutu
             </button>
           </div>
         </div>

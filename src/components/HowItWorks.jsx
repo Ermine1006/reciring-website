@@ -18,7 +18,7 @@ const STEPS = [
     icon: Sparkle,
     tone: 'gold',
     title: 'Get AI recommendations',
-    text: 'Mutu surfaces the people, events, and conversations most relevant to you.',
+    text: 'MuTu surfaces the people, events, and conversations most relevant to you.',
   },
   {
     icon: Users,
@@ -35,7 +35,7 @@ export default function HowItWorks() {
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-600">
-              How Mutu works
+              How MuTu works
             </span>
           </Reveal>
           <Reveal delay={80}>
@@ -45,7 +45,7 @@ export default function HowItWorks() {
           </Reveal>
           <Reveal delay={140}>
             <p className="mt-5 text-lg leading-relaxed text-neutral-600">
-              Mutu uses AI to surface relevant people, events, and conversations — so the value
+              MuTu uses AI to surface relevant people, events, and conversations — so the value
               already inside your community finally reaches you.
             </p>
           </Reveal>

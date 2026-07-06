@@ -35,7 +35,7 @@ export default function RevealExperience() {
             You decide what to share, and when.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-neutral-600">
-            Mutu is a verified, community-based network — every member is confirmed through your
+            MuTu is a verified, community-based network — every member is confirmed through your
             school or organization. You choose to show up as yourself or stay private, and names are
             only exchanged when there&apos;s mutual interest. So reaching out never feels like a risk.
           </p>

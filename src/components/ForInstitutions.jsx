@@ -20,7 +20,7 @@ export default function ForInstitutions() {
               Free for members. Licensed by the institution.
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-neutral-600">
-              Mutu is community infrastructure. Universities and accelerators license it; members
+              MuTu is community infrastructure. Universities and accelerators license it; members
               join free — because density is the product, and a more connected cohort is the value
               the institution keeps.
             </p>

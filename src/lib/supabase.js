@@ -46,7 +46,7 @@ export async function submitWaitlist(entry) {
 
   if (!isSupabaseConfigured) {
     console.warn(
-      '[Mutu] Supabase is not configured — the signup was saved to localStorage only. ' +
+      '[MuTu] Supabase is not configured — the signup was saved to localStorage only. ' +
         'Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY (see .env.example) to persist signups.',
     )
     return { ok: true, persisted: false }

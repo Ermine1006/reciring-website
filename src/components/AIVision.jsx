@@ -46,7 +46,7 @@ export default function AIVision() {
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-white/70">
             Today&apos;s platforms help you <em className="not-italic text-white/90">find</em> connections.
-            Mutu helps you build and activate them. It learns your goals, your relationships, and
+            MuTu helps you build and activate them. It learns your goals, your relationships, and
             your context — then proactively brings the right people, events, and conversations to you.
           </p>
         </div>
@@ -83,7 +83,7 @@ export default function AIVision() {
           <div className="mt-8 flex flex-col gap-4 rounded-2xl border border-white/10 bg-gradient-to-r from-brand-500/12 to-transparent p-7 sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-2xl font-serif text-xl font-semibold leading-snug text-white sm:text-2xl">
               In the future, every professional will have an AI agent managing their network — the
-              way they have email and a calendar today. Mutu is building that agent.
+              way they have email and a calendar today. MuTu is building that agent.
             </p>
             <span className="shrink-0 rounded-full border border-white/15 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white/60">
               Our vision
@@ -92,7 +92,7 @@ export default function AIVision() {
         </Reveal>
 
         <p className="mt-6 text-xs italic text-white/40">
-          AI features shown are an early preview of the Mutu product experience.
+          AI features shown are an early preview of the MuTu product experience.
         </p>
       </div>
     </section>

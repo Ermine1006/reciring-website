@@ -20,14 +20,14 @@ export default function Footer() {
           <div className="max-w-sm">
             <Logo />
             <p className="mt-4 text-[0.95rem] leading-relaxed text-neutral-600">
-              An AI-powered trusted network platform. Mutu turns the hidden networks inside your
+              An AI-powered trusted network platform. MuTu turns the hidden networks inside your
               community into meaningful people, events, and opportunities.
             </p>
             <button
               onClick={openWaitlist}
               className="mt-5 inline-flex items-center gap-2 rounded-full bg-ink-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-600"
             >
-              Join Mutu →
+              Join MuTu →
             </button>
           </div>
 
@@ -50,12 +50,12 @@ export default function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-5 py-5 sm:flex-row sm:justify-between sm:px-8">
           <div className="flex items-center gap-3">
             <LogoMark className="h-6 w-9" />
-            <span className="font-serif text-lg font-bold">Mutu</span>
+            <span className="font-serif text-lg font-bold">MuTu</span>
           </div>
           <p className="text-sm font-semibold">Mutual value. Trusted connections.</p>
           <div className="flex items-center gap-4">
             <span className="hidden text-sm font-medium text-ink-900/70 sm:inline">
-              © {new Date().getFullYear()} Mutu
+              © {new Date().getFullYear()} MuTu
             </span>
             <div className="flex items-center gap-3">
               <a href="#" aria-label="LinkedIn" className="text-ink-900/80 transition-colors hover:text-ink-900">

@@ -31,7 +31,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-neutral-600 text-pretty">
-            Mutu is an AI-powered community platform where members discover relevant people, events,
+            MuTu is an AI-powered community platform where members discover relevant people, events,
             and conversations — based on what they can offer, what they need, and who they already
             trust.
           </p>
@@ -41,7 +41,7 @@ export default function Hero() {
               onClick={openWaitlist}
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-brand-400 px-6 py-3.5 text-base font-semibold text-ink-900 shadow-lg shadow-brand-500/25 transition-all hover:bg-brand-500 hover:text-white"
             >
-              Join Mutu
+              Join MuTu
               <Arrow className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </button>
             <a
@@ -66,7 +66,7 @@ export default function Hero() {
   )
 }
 
-/* ---- Hero visual: a warm network orbit — peers connecting around the Mutu core ---- */
+/* ---- Hero visual: a warm network orbit — peers connecting around the MuTu core ---- */
 const NODES = [
   { cx: 118, cy: 96, r: 30, initials: 'SL', tone: 'gold' },
   { cx: 322, cy: 120, r: 27, initials: 'MC', tone: 'navy' },
@@ -81,7 +81,7 @@ function NetworkOrbit() {
       <div className="absolute -inset-5 -z-10 rounded-[2.4rem] bg-gradient-to-br from-brand-200/40 via-transparent to-gold-300/30 blur-2xl" />
       <div className="rounded-[1.9rem] border border-neutral-200/80 bg-white/90 p-5 shadow-2xl shadow-ink-900/10 backdrop-blur animate-float sm:p-6">
         <div className="relative aspect-square w-full">
-          <svg viewBox="0 0 440 400" className="h-full w-full" role="img" aria-label="Peers connecting around the Mutu network core">
+          <svg viewBox="0 0 440 400" className="h-full w-full" role="img" aria-label="Peers connecting around the MuTu network core">
             {/* Orbit rings */}
             <circle cx={CENTER.x} cy={CENTER.y} r="150" fill="none" stroke="var(--color-brand-200)" strokeWidth="1" strokeDasharray="3 6" opacity="0.7" />
             <circle cx={CENTER.x} cy={CENTER.y} r="110" fill="none" stroke="var(--color-brand-200)" strokeWidth="1" opacity="0.5" />
@@ -136,7 +136,7 @@ function NetworkOrbit() {
             <Sparkle className="h-4.5 w-4.5" />
           </span>
           <p className="text-sm font-medium leading-relaxed text-ink-800">
-            Mutu matches you with the right people, events, and opportunities.
+            MuTu matches you with the right people, events, and opportunities.
           </p>
         </div>
       </div>

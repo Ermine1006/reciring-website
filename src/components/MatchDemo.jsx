@@ -94,7 +94,7 @@ export default function MatchDemo() {
           What do you need help with?
         </h2>
         <p className="mt-5 text-lg leading-relaxed text-neutral-600">
-          Type it — or tap one. Mutu surfaces someone whose goals line up with yours, and who needs
+          Type it — or tap one. MuTu surfaces someone whose goals line up with yours, and who needs
           exactly what you can give back. No cold outreach. Just the match.
         </p>
       </div>
@@ -155,7 +155,7 @@ export default function MatchDemo() {
             <div className="flex min-h-[15rem] flex-col items-center justify-center rounded-2xl border border-neutral-200 bg-white px-6 text-center">
               <span className="h-8 w-8 animate-spin-slow rounded-full border-[3px] border-brand-200 border-t-brand-500" />
               <p className="mt-4 text-sm font-medium text-neutral-500">
-                Mutu is scanning your community for a mutual fit…
+                MuTu is scanning your community for a mutual fit…
               </p>
             </div>
           )}

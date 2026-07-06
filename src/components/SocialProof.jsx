@@ -43,7 +43,7 @@ export default function SocialProof() {
             Built inside the community it serves.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-white/70">
-            Mutu didn&apos;t start in a boardroom. It started with real students saying the same
+            MuTu didn&apos;t start in a boardroom. It started with real students saying the same
             quiet thing — we all came here to grow, but the structure makes it hard to ask for help.
           </p>
         </div>

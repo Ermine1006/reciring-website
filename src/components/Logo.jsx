@@ -1,4 +1,4 @@
-// Two interlocking rings = mutual exchange — the heart of "Mutu."
+// Two interlocking rings = mutual exchange — the heart of "MuTu."
 export function LogoMark({ className = 'h-7 w-7' }) {
   return (
     <svg viewBox="0 0 40 28" className={className} aria-hidden="true">
@@ -13,7 +13,7 @@ export default function Logo({ className = '', tone = 'dark' }) {
   return (
     <span className={`inline-flex items-center gap-2 ${className}`}>
       <LogoMark className="h-7 w-10" />
-      <span className={`font-serif text-[1.45rem] font-bold tracking-tight ${text}`}>Mutu</span>
+      <span className={`font-serif text-[1.45rem] font-bold tracking-tight ${text}`}>MuTu</span>
     </span>
   )
 }

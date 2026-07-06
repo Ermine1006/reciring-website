@@ -31,7 +31,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 sm:px-8">
-        <a href="#top" className="shrink-0" aria-label="Mutu home">
+        <a href="#top" className="shrink-0" aria-label="MuTu home">
           <Logo />
         </a>
 
@@ -58,7 +58,7 @@ export default function Navbar() {
             onClick={openWaitlist}
             className="rounded-full bg-brand-400 px-4.5 py-2 text-sm font-semibold text-ink-900 shadow-sm transition-all hover:bg-brand-500 hover:text-white hover:shadow-brand-500/20"
           >
-            Join Mutu
+            Join MuTu
           </button>
         </div>
 
@@ -94,7 +94,7 @@ export default function Navbar() {
               }}
               className="mt-2 rounded-full bg-brand-400 px-4 py-2.5 text-center text-sm font-semibold text-ink-900"
             >
-              Join Mutu
+              Join MuTu
             </button>
           </div>
         </div>

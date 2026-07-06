@@ -1,15 +1,15 @@
-# Mutu — Official Website
+# MuTu — Official Website
 
-The marketing / investor landing page for **Mutu**, an AI-powered trusted network platform for
+The marketing / investor landing page for **MuTu**, an AI-powered trusted network platform for
 professional communities. _Turn hidden networks into meaningful opportunities._
 
-> **Mutu** comes from _mutual_ — mutual value exchange, trusted introductions, and people
+> **MuTu** comes from _mutual_ — mutual value exchange, trusted introductions, and people
 > helping each other through warm networks.
 
 Built with **React 19 + Vite + Tailwind CSS v4**. Designed to be shown to investors, advisors,
 Rotman classmates, and institutional buyers — and to deploy on Vercel with zero config.
 
-> This is the website project only. It is independent of the Mutu product app. The AI features
+> This is the website project only. It is independent of the MuTu product app. The AI features
 > shown here (connection recommendations, daily digest, conversation starters, event
 > recommendations, network insights) are **mock UI** on the marketing site — the live matching
 > backend lives in the separate product app.
@@ -26,7 +26,7 @@ npm run lint     # eslint
 
 ## Waitlist (Supabase)
 
-The primary CTA — **"Join Mutu"** — opens a modal that collects name, email, school, program,
+The primary CTA — **"Join MuTu"** — opens a modal that collects name, email, school, program,
 optional LinkedIn, and a multi-select "what are you looking for most?" The site is in waitlist
 stage: the secondary action ("Explore the network") smooth-scrolls to the interactive match demo.
 
@@ -51,7 +51,7 @@ Designed as a product walkthrough, not a deck. Each section is a moment:
 1. **Hero** — positioning hook + a live AI recommendation card that morphs through suggestions
 2. **Problem** — scroll-triggered graph: valuable people already in your community, but hidden
 3. **How it works** — profile → offer + need → AI recommendations → meet through posts & events
-4. **Solution demo** — interactive: type/tap a need, Mutu surfaces a relevant match live
+4. **Solution demo** — interactive: type/tap a need, MuTu surfaces a relevant match live
 5. **AI Vision** — the future AI network intelligence layer: digest, intros, insights (mock UI)
 6. **Trust & control** — you choose real-name or anonymous; verified, community-based trust
 7. **Community** — "Built inside the community it serves," real cohort quotes + credibility

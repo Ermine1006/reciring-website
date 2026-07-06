@@ -164,3 +164,39 @@ export const Trend = (p) => (
     <path d="M15 7h6v6" />
   </svg>
 )
+
+export const Home = (p) => (
+  <svg {...base} {...p}>
+    <path d="M3 10.5L12 3l9 7.5" />
+    <path d="M5 9.5V21h14V9.5" />
+    <path d="M9.5 21v-6h5v6" />
+  </svg>
+)
+
+export const Bell = (p) => (
+  <svg {...base} {...p}>
+    <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+    <path d="M13.7 21a2 2 0 0 1-3.4 0" />
+  </svg>
+)
+
+export const Plus = (p) => (
+  <svg {...base} {...p}>
+    <line x1="12" y1="5" x2="12" y2="19" />
+    <line x1="5" y1="12" x2="19" y2="12" />
+  </svg>
+)
+
+export const LinkedIn = (p) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" {...p}>
+    <path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.3c0-1.26-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H9z" />
+  </svg>
+)
+
+export const Instagram = (p) => (
+  <svg {...base} {...p}>
+    <rect x="3" y="3" width="18" height="18" rx="5" />
+    <circle cx="12" cy="12" r="4" />
+    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5" />
+  </svg>
+)

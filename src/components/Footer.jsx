@@ -1,5 +1,6 @@
-import Logo from './Logo'
+import Logo, { LogoMark } from './Logo'
 import { useWaitlist } from '../context/WaitlistProvider'
+import { LinkedIn, Instagram, Globe } from './Icons'
 
 const NAV = [
   { href: '#network', label: 'The problem' },
@@ -13,7 +14,7 @@ const NAV = [
 export default function Footer() {
   const openWaitlist = useWaitlist()
   return (
-    <footer className="border-t border-neutral-200 bg-white">
+    <footer className="bg-white">
       <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
@@ -24,7 +25,7 @@ export default function Footer() {
             </p>
             <button
               onClick={openWaitlist}
-              className="mt-5 inline-flex items-center gap-2 rounded-full bg-neutral-950 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-600"
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-ink-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-600"
             >
               Join Mutu →
             </button>
@@ -35,17 +36,39 @@ export default function Footer() {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm font-medium text-neutral-600 transition-colors hover:text-neutral-950"
+                className="text-sm font-medium text-neutral-600 transition-colors hover:text-ink-900"
               >
                 {l.label}
               </a>
             ))}
           </nav>
         </div>
+      </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-neutral-100 pt-6 text-sm text-neutral-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Mutu. All rights reserved.</p>
-          <p>Mutual value, meaningful connection — no one grows alone.</p>
+      {/* Gold brand bar */}
+      <div className="bg-brand-400 text-ink-900">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-5 py-5 sm:flex-row sm:justify-between sm:px-8">
+          <div className="flex items-center gap-3">
+            <LogoMark className="h-6 w-9" />
+            <span className="font-serif text-lg font-bold">Mutu</span>
+          </div>
+          <p className="text-sm font-semibold">Mutual value. Trusted connections.</p>
+          <div className="flex items-center gap-4">
+            <span className="hidden text-sm font-medium text-ink-900/70 sm:inline">
+              © {new Date().getFullYear()} Mutu
+            </span>
+            <div className="flex items-center gap-3">
+              <a href="#" aria-label="LinkedIn" className="text-ink-900/80 transition-colors hover:text-ink-900">
+                <LinkedIn className="h-5 w-5" />
+              </a>
+              <a href="#" aria-label="Instagram" className="text-ink-900/80 transition-colors hover:text-ink-900">
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a href="#" aria-label="Website" className="text-ink-900/80 transition-colors hover:text-ink-900">
+                <Globe className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -28,8 +28,8 @@ export default function RevealExperience() {
       <div ref={ref} className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-2">
         {/* Copy */}
         <div>
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">
-            Trust &amp; control
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-600">
+            Built on trust
           </span>
           <h2 className="mt-4 font-serif text-3xl font-semibold leading-[1.1] tracking-tight text-neutral-950 text-balance sm:text-[2.7rem]">
             You decide what to share, and when.

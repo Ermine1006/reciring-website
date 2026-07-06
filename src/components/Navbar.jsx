@@ -56,7 +56,7 @@ export default function Navbar() {
           </a>
           <button
             onClick={openWaitlist}
-            className="rounded-full bg-neutral-950 px-4.5 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-brand-600 hover:shadow-brand-500/20"
+            className="rounded-full bg-brand-400 px-4.5 py-2 text-sm font-semibold text-ink-900 shadow-sm transition-all hover:bg-brand-500 hover:text-white hover:shadow-brand-500/20"
           >
             Join Mutu
           </button>
@@ -92,7 +92,7 @@ export default function Navbar() {
                 setOpen(false)
                 openWaitlist()
               }}
-              className="mt-2 rounded-full bg-neutral-950 px-4 py-2.5 text-center text-sm font-semibold text-white"
+              className="mt-2 rounded-full bg-brand-400 px-4 py-2.5 text-center text-sm font-semibold text-ink-900"
             >
               Join Mutu
             </button>

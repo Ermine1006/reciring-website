@@ -203,7 +203,7 @@ export default function WaitlistModal({ onClose }) {
             <button
               type="submit"
               disabled={!canSubmit}
-              className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-brand-500 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-brand-500/25 transition-all hover:bg-brand-600 disabled:cursor-not-allowed disabled:opacity-50"
+              className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-brand-400 px-6 py-3.5 text-base font-semibold text-ink-900 shadow-lg shadow-brand-500/25 transition-all hover:bg-brand-500 hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
             >
               {status === 'submitting' ? (
                 <>

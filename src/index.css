@@ -4,31 +4,31 @@
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-serif: 'Fraunces', ui-serif, Georgia, 'Times New Roman', serif;
 
-  /* Brand — vivid magenta/pink */
-  --color-brand-50: #fff1f7;
-  --color-brand-100: #ffe0ee;
-  --color-brand-200: #ffc2dd;
-  --color-brand-300: #ff90bf;
-  --color-brand-400: #ff4d97;
-  --color-brand-500: #ec0a73;
-  --color-brand-600: #d10063;
-  --color-brand-700: #ab0052;
-  --color-brand-800: #8d0846;
-  --color-brand-900: #760c3d;
+  /* Brand — warm gold (primary accent) */
+  --color-brand-50: #faf6ea;
+  --color-brand-100: #f3e8c6;
+  --color-brand-200: #e9d79a;
+  --color-brand-300: #dec163;
+  --color-brand-400: #d4af37;
+  --color-brand-500: #be9526;
+  --color-brand-600: #a17e20;
+  --color-brand-700: #856819;
+  --color-brand-800: #6b5316;
+  --color-brand-900: #574314;
 
-  /* Secondary — warm gold */
-  --color-gold-300: #e8c977;
-  --color-gold-400: #d8ad4e;
-  --color-gold-500: #c39433;
-  --color-gold-600: #a67a26;
+  /* Secondary — soft gold highlights */
+  --color-gold-300: #e8cd82;
+  --color-gold-400: #d4af37;
+  --color-gold-500: #c29a2b;
+  --color-gold-600: #a17e20;
 
-  /* Deep navy */
-  --color-ink-950: #080b22;
-  --color-ink-900: #0e1330;
-  --color-ink-800: #161c44;
-  --color-ink-700: #232a59;
+  /* Deep navy / near-black */
+  --color-ink-950: #0c121c;
+  --color-ink-900: #131a26;
+  --color-ink-800: #1c2740;
+  --color-ink-700: #2a3757;
 
-  --color-paper: #fcfbfa;
+  --color-paper: #f7f5f0;
 }
 
 @layer base {
@@ -40,12 +40,12 @@
   body {
     margin: 0;
     font-family: var(--font-sans);
-    background-color: #ffffff;
-    color: #0a0a0a;
+    background-color: #fcfbf8;
+    color: #14171f;
   }
   ::selection {
-    background-color: var(--color-brand-500);
-    color: #ffffff;
+    background-color: var(--color-brand-300);
+    color: var(--color-ink-900);
   }
 }
 
@@ -62,7 +62,7 @@
 
   /* Animated gradient text */
   .text-gradient {
-    background: linear-gradient(100deg, var(--color-brand-500), var(--color-gold-400), var(--color-brand-400));
+    background: linear-gradient(100deg, var(--color-brand-600), var(--color-brand-400), var(--color-gold-500));
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;

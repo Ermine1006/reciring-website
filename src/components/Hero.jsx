@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { Arrow, Sparkle, Check, Handshake } from './Icons'
+import { Arrow, Sparkle } from './Icons'
 import { useWaitlist } from '../context/WaitlistProvider'
 
 export default function Hero() {
@@ -7,12 +6,12 @@ export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 grid-faint opacity-60" />
+        <div className="absolute inset-0 grid-faint opacity-50" />
         <div className="absolute -top-44 right-[-8%] h-[36rem] w-[36rem] rounded-full bg-brand-200/40 blur-3xl animate-blob" />
         <div className="absolute top-28 left-[-12%] h-[28rem] w-[28rem] rounded-full bg-gold-300/25 blur-3xl animate-blob [animation-delay:-6s]" />
         <div
           className="absolute inset-x-0 top-0 h-[60%]"
-          style={{ background: 'radial-gradient(60% 60% at 50% 0%, rgba(236,10,115,0.05), transparent 70%)' }}
+          style={{ background: 'radial-gradient(60% 60% at 50% 0%, rgba(212,175,55,0.08), transparent 70%)' }}
         />
       </div>
 
@@ -26,7 +25,7 @@ export default function Hero() {
             AI-powered network intelligence · now onboarding Rotman MBA
           </div>
 
-          <h1 className="mt-6 font-serif text-[2.6rem] font-semibold leading-[1.05] tracking-tight text-neutral-950 text-balance sm:text-[3.9rem]">
+          <h1 className="mt-6 font-serif text-[2.6rem] font-semibold leading-[1.05] tracking-tight text-ink-900 text-balance sm:text-[3.9rem]">
             Turn hidden networks into{' '}
             <span className="text-gradient">meaningful opportunities.</span>
           </h1>
@@ -40,119 +39,106 @@ export default function Hero() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <button
               onClick={openWaitlist}
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-brand-500 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-brand-500/25 transition-all hover:bg-brand-600 hover:shadow-brand-500/40"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-brand-400 px-6 py-3.5 text-base font-semibold text-ink-900 shadow-lg shadow-brand-500/25 transition-all hover:bg-brand-500 hover:text-white"
             >
               Join Mutu
               <Arrow className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </button>
             <a
               href="#demo"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-3.5 text-base font-semibold text-neutral-900 transition-all hover:border-neutral-400 hover:bg-neutral-50"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-3.5 text-base font-semibold text-ink-900 transition-all hover:border-brand-300 hover:bg-brand-50"
             >
               Explore the network
             </a>
           </div>
 
-          <p className="mt-7 max-w-md text-sm leading-relaxed text-neutral-500">
-            The most valuable person in your community may already be one warm introduction away.
-            Mutu surfaces the match — and helps you make it.
+          <p className="mt-7 flex items-center gap-2 text-sm font-semibold text-brand-700">
+            <span className="h-px w-8 bg-brand-300" />
+            Mutual value. Trusted connections.
           </p>
         </div>
 
         <div className="relative">
-          <RecommendationPreview />
+          <NetworkOrbit />
         </div>
       </div>
     </section>
   )
 }
 
-/* ---- AI-native hero visual: a "Recommended for you" card that reasons about the match ---- */
-const prefersReducedMotion = () =>
-  typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
-
-const REASONS = [
-  'You both want to break into venture capital',
-  'Sarah has startup hiring experience',
-  'You can offer China market insights',
+/* ---- Hero visual: a warm network orbit — peers connecting around the Mutu core ---- */
+const NODES = [
+  { cx: 118, cy: 96, r: 30, initials: 'SL', tone: 'gold' },
+  { cx: 322, cy: 120, r: 27, initials: 'MC', tone: 'navy' },
+  { cx: 96, cy: 300, r: 27, initials: 'DK', tone: 'navy' },
+  { cx: 330, cy: 296, r: 30, initials: 'AR', tone: 'gold' },
 ]
+const CENTER = { x: 220, y: 200 }
 
-function RecommendationPreview() {
-  // Reduced-motion users see the fully "reasoned" card immediately (past the last reason).
-  const [step, setStep] = useState(() => (prefersReducedMotion() ? REASONS.length + 1 : 0))
-
-  useEffect(() => {
-    if (prefersReducedMotion()) return
-    const t = setTimeout(
-      () => setStep((s) => (s > REASONS.length ? 0 : s + 1)),
-      step === 0 ? 700 : step > REASONS.length ? 1800 : 900,
-    )
-    return () => clearTimeout(t)
-  }, [step])
-
+function NetworkOrbit() {
   return (
     <div className="relative mx-auto w-full max-w-md">
-      <div className="absolute -inset-5 -z-10 rounded-[2.2rem] bg-gradient-to-br from-brand-200/40 via-transparent to-gold-300/30 blur-2xl" />
-      <div className="rounded-[1.9rem] border border-neutral-200 bg-white/95 p-5 shadow-2xl shadow-neutral-900/10 backdrop-blur animate-float sm:p-6">
-        {/* Card header */}
-        <div className="flex items-center gap-2 text-brand-600">
-          <Sparkle className="h-4 w-4" />
-          <span className="text-[0.7rem] font-bold uppercase tracking-widest">Recommended for you</span>
-        </div>
-
-        {/* Person */}
-        <div className="mt-4 flex items-center gap-3.5">
-          <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-base font-bold text-white">
-            SC
-          </span>
-          <div className="leading-tight">
-            <p className="text-[1.02rem] font-semibold text-neutral-950">Sarah Chen</p>
-            <p className="text-sm text-neutral-500">2nd-year MBA · ex-startup operator</p>
-          </div>
-          <span className="ml-auto rounded-full bg-brand-50 px-2.5 py-1 text-xs font-bold text-brand-600 ring-1 ring-brand-100">
-            94% fit
-          </span>
-        </div>
-
-        {/* AI reasoning — builds line by line */}
-        <div className="mt-5 rounded-2xl bg-neutral-50 p-4">
-          <p className="text-[0.7rem] font-bold uppercase tracking-widest text-neutral-400">
-            Why Mutu suggests Sarah
-          </p>
-          <ul className="mt-2.5 space-y-2">
-            {REASONS.map((r, i) => (
-              <li
-                key={r}
-                className={`flex items-start gap-2 text-sm transition-all duration-500 ${
-                  step > i ? 'text-neutral-700 opacity-100' : 'translate-y-1 text-neutral-400 opacity-0'
-                }`}
-              >
-                <Check
-                  className={`mt-0.5 h-4 w-4 shrink-0 ${step > i ? 'text-brand-500' : 'text-neutral-300'}`}
-                />
-                {r}
-              </li>
+      <div className="absolute -inset-5 -z-10 rounded-[2.4rem] bg-gradient-to-br from-brand-200/40 via-transparent to-gold-300/30 blur-2xl" />
+      <div className="rounded-[1.9rem] border border-neutral-200/80 bg-white/90 p-5 shadow-2xl shadow-ink-900/10 backdrop-blur animate-float sm:p-6">
+        <div className="relative aspect-square w-full">
+          <svg viewBox="0 0 440 400" className="h-full w-full" role="img" aria-label="Peers connecting around the Mutu network core">
+            {/* Orbit rings */}
+            <circle cx={CENTER.x} cy={CENTER.y} r="150" fill="none" stroke="var(--color-brand-200)" strokeWidth="1" strokeDasharray="3 6" opacity="0.7" />
+            <circle cx={CENTER.x} cy={CENTER.y} r="110" fill="none" stroke="var(--color-brand-200)" strokeWidth="1" opacity="0.5" />
+            {/* Connecting lines */}
+            {NODES.map((n, i) => (
+              <line
+                key={i}
+                x1={CENTER.x}
+                y1={CENTER.y}
+                x2={n.cx}
+                y2={n.cy}
+                stroke="var(--color-brand-300)"
+                strokeWidth="1.4"
+                strokeOpacity="0.6"
+                className="animate-draw"
+                style={{ animationDelay: `${i * 120}ms` }}
+              />
             ))}
-            {step <= REASONS.length && (
-              <li className="flex items-center gap-2 pt-0.5 text-sm text-neutral-400">
-                <span className="h-3.5 w-3.5 animate-spin-slow rounded-full border-2 border-brand-200 border-t-brand-500" />
-                Analyzing mutual value…
-              </li>
-            )}
-          </ul>
+            {/* Center core */}
+            <circle cx={CENTER.x} cy={CENTER.y} r="52" fill="var(--color-brand-50)" stroke="var(--color-brand-200)" strokeWidth="1.5" />
+            <g transform={`translate(${CENTER.x - 30} ${CENTER.y - 21})`}>
+              <circle cx="21" cy="21" r="16.5" fill="none" stroke="var(--color-brand-400)" strokeWidth="4.5" />
+              <circle cx="39" cy="21" r="16.5" fill="none" stroke="var(--color-brand-600)" strokeWidth="4.5" />
+            </g>
+          </svg>
+
+          {/* Avatar bubbles (positioned over the svg) */}
+          {NODES.map((n, i) => (
+            <span
+              key={i}
+              className={`absolute flex items-center justify-center rounded-full text-sm font-bold shadow-lg ring-4 ring-white ${
+                n.tone === 'gold'
+                  ? 'bg-gradient-to-br from-brand-300 to-brand-500 text-ink-900'
+                  : 'bg-gradient-to-br from-ink-800 to-ink-950 text-brand-300'
+              }`}
+              style={{
+                left: `${(n.cx / 440) * 100}%`,
+                top: `${(n.cy / 400) * 100}%`,
+                width: `${(n.r * 2 / 440) * 100}%`,
+                height: `${(n.r * 2 / 400) * 100}%`,
+                transform: 'translate(-50%, -50%)',
+              }}
+            >
+              {n.initials}
+            </span>
+          ))}
         </div>
 
-        {/* Action */}
-        <button
-          className={`mt-4 flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-500 ${
-            step > REASONS.length
-              ? 'bg-brand-500 text-white shadow-lg shadow-brand-500/25'
-              : 'bg-neutral-100 text-neutral-400'
-          }`}
-        >
-          <Handshake className="h-4 w-4" />
-          Request a warm intro
-        </button>
+        {/* Caption */}
+        <div className="mt-3 flex items-start gap-3 rounded-2xl bg-brand-50 px-4 py-3">
+          <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-400 text-ink-900">
+            <Sparkle className="h-4.5 w-4.5" />
+          </span>
+          <p className="text-sm font-medium leading-relaxed text-ink-800">
+            Mutu matches you with the right people, events, and opportunities.
+          </p>
+        </div>
       </div>
     </div>
   )

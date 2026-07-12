@@ -26,19 +26,19 @@ export default function FinalCTA() {
             onClick={openWaitlist}
             className="group inline-flex items-center justify-center gap-2 rounded-full bg-brand-400 px-7 py-4 text-base font-semibold text-ink-900 shadow-lg shadow-brand-500/30 transition-all hover:bg-brand-300"
           >
-            Join MuTu
+            Request access
             <Arrow className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </button>
           <a
             href="#demo"
             className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 px-7 py-4 text-base font-semibold text-white transition-all hover:border-white/40 hover:bg-white/10"
           >
-            Explore the network
+            See the product
           </a>
         </div>
 
         <p className="mt-8 text-sm text-white/40">
-          Onboarding cohorts now · Pre-seed · Founder-led from inside Rotman MBA
+          Early access for trusted communities and their members.
         </p>
       </div>
     </section>

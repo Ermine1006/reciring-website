@@ -103,7 +103,7 @@ export default function WaitlistModal({ onClose }) {
               <Sparkle className="h-3.5 w-3.5" /> First adopters
             </span>
             <h2 id="waitlist-title" className="mt-4 font-serif text-2xl font-semibold text-neutral-950">
-              Join MuTu
+              Request access
             </h2>
             <p className="mt-2 text-[0.95rem] leading-relaxed text-neutral-600">
               We&apos;re onboarding communities a few at a time. Tell us a little about you and

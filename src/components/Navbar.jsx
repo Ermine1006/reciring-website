@@ -52,13 +52,13 @@ export default function Navbar() {
             href="#demo"
             className="rounded-full px-4 py-2 text-sm font-semibold text-neutral-700 transition-colors hover:text-neutral-950"
           >
-            Explore the network
+            See the product
           </a>
           <button
             onClick={openWaitlist}
             className="rounded-full bg-brand-400 px-4.5 py-2 text-sm font-semibold text-ink-900 shadow-sm transition-all hover:bg-brand-500 hover:text-white hover:shadow-brand-500/20"
           >
-            Join MuTu
+            Request access
           </button>
         </div>
 
@@ -94,7 +94,7 @@ export default function Navbar() {
               }}
               className="mt-2 rounded-full bg-brand-400 px-4 py-2.5 text-center text-sm font-semibold text-ink-900"
             >
-              Join MuTu
+              Request access
             </button>
           </div>
         </div>

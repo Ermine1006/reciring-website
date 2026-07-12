@@ -27,7 +27,7 @@ export default function Footer() {
               onClick={openWaitlist}
               className="mt-5 inline-flex items-center gap-2 rounded-full bg-ink-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-600"
             >
-              Join MuTu →
+              Request access →
             </button>
           </div>
 

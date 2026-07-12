@@ -26,9 +26,9 @@ npm run lint     # eslint
 
 ## Waitlist (Supabase)
 
-The primary CTA — **"Join MuTu"** — opens a modal that collects name, email, school, program,
+The primary CTA — **"Request access"** — opens a modal that collects name, email, school, program,
 optional LinkedIn, and a multi-select "what are you looking for most?" The site is in waitlist
-stage: the secondary action ("Explore the network") smooth-scrolls to the interactive match demo.
+stage: the secondary action ("See the product") smooth-scrolls to the interactive match demo.
 
 Submissions are written to a Supabase `waitlist` table. **Setup:**
 

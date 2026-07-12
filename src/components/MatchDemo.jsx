@@ -88,14 +88,14 @@ export default function MatchDemo() {
 
       <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
         <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">
-          The solution
+          The experience
         </span>
         <h2 className="mt-4 font-serif text-3xl font-semibold leading-[1.1] tracking-tight text-neutral-950 text-balance sm:text-[2.7rem]">
           What do you need help with?
         </h2>
         <p className="mt-5 text-lg leading-relaxed text-neutral-600">
-          Type it — or tap one. MuTu surfaces someone whose goals line up with yours, and who needs
-          exactly what you can give back. No cold outreach. Just the match.
+          Type it — or tap one. MuTu considers what members need, what they can offer, and the
+          context they already share before suggesting an introduction.
         </p>
       </div>
 

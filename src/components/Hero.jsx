@@ -31,9 +31,8 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-neutral-600 text-pretty">
-            MuTu is an AI-powered community platform where members discover relevant people, events,
-            and conversations — based on what they can offer, what they need, and who they already
-            trust.
+            MuTu helps trusted communities surface the right people for each goal — then makes warm
+            introductions with consent built in.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -41,14 +40,14 @@ export default function Hero() {
               onClick={openWaitlist}
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-brand-400 px-6 py-3.5 text-base font-semibold text-ink-900 shadow-lg shadow-brand-500/25 transition-all hover:bg-brand-500 hover:text-white"
             >
-              Join MuTu
+              Request access
               <Arrow className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </button>
             <a
               href="#demo"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-3.5 text-base font-semibold text-ink-900 transition-all hover:border-brand-300 hover:bg-brand-50"
             >
-              Explore the network
+              See the product
             </a>
           </div>
 

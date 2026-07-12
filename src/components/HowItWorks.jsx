@@ -40,7 +40,7 @@ export default function HowItWorks() {
           </Reveal>
           <Reveal delay={80}>
             <h2 className="mt-4 font-serif text-3xl font-semibold leading-[1.1] tracking-tight text-ink-900 text-balance sm:text-[2.7rem]">
-              From profile to warm introduction — in four steps.
+              From a goal to the right introduction — in four steps.
             </h2>
           </Reveal>
           <Reveal delay={140}>

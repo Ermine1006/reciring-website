@@ -1,7 +1,8 @@
 # MuTu — Official Website
 
-The marketing / investor landing page for **MuTu**, an AI-powered trusted network platform for
-professional communities. _Turn hidden networks into meaningful opportunities._
+The official website for **MuTu**, an AI-powered trusted network platform for
+professional communities. The homepage is the original scrolling game journey;
+the complete product, company, and investor page lives at `/about/`.
 
 > **MuTu** comes from _mutual_ — mutual value exchange, trusted introductions, and people
 > helping each other through warm networks.
@@ -23,6 +24,26 @@ npm run build    # production build → dist/
 npm run preview  # preview the production build
 npm run lint     # eslint
 ```
+
+## Homepage and original content
+
+| Address | Content | Source |
+| --- | --- | --- |
+| `/` | Original Mutu journey, mascot, and four product chapters | `index.html`, `public/journey/` |
+| `/about/` | Original product demos, AI vision, trust, community, institutions, team, and request-access form | `about/index.html`, `src/` |
+| `/privacy.html` | Existing privacy policy | `public/privacy.html` |
+| `/child-safety.html` | Existing child safety standards | `public/child-safety.html` |
+| `/delete-account.html` | Existing account and data deletion instructions | `public/delete-account.html` |
+
+The homepage links to the original sections through its About Mutu menu and footer.
+Existing shared links such as `/#team`, `/#demo`, and `/#join` forward to the matching
+section in `/about/`. The About page links back to the scrolling journey. Product app
+links continue to open `https://reciring.com/`.
+
+Vite builds both HTML entry points. The original React components and waitlist client
+remain in `src/`; edit them there as before. Journey assets are served from `/journey/`
+so they remain separate from Vite's generated React bundles. The three policy files
+retain their original contents and URLs.
 
 ## Waitlist (Supabase)
 
@@ -92,5 +113,20 @@ Tokens live in [`src/index.css`](src/index.css) under `@theme`.
 
 ## Deploy on Vercel
 
-Framework preset: **Vite**. Build command `npm run build`, output directory `dist`.
-[`vercel.json`](vercel.json) adds SPA rewrites so deep links resolve to the app.
+Use the existing **`mutu_website`** Vercel project connected to
+**`Ermine1006/reciring-website`**. Framework preset: **Vite**. Build command
+`npm run build`, output directory `dist`, and root directory at the repository root.
+Keep the current production environment variables for Supabase. If they are scoped
+to Production only, include them in Preview before checking the request-access form
+on a branch deployment.
+
+[`vercel.json`](vercel.json) serves both generated pages and the original policy
+files. The previous catch-all SPA rewrite is removed so `/about/` can serve its own
+HTML entry point. This source project continues to use the Vite build; it does not
+use the empty build command from the separate static export package.
+
+Publish the `website-refresh` branch to obtain a Vercel Preview deployment. Review
+the journey, the About links, all three policy URLs, and the existing form setup.
+Once the change is ready, merging into the existing production branch `main` lets
+the current Vercel project deploy it under `www.muturing.com`; keep its existing
+domain assignment.
